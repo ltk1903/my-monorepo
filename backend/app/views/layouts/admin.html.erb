@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Panel</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Dashboard - SB Admin</title> 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <%= javascript_include_tag "application", type: "module" %>
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <%= stylesheet_link_tag "admin/styles.css" %>
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body class="container">
-  <header class="bg-dark text-white p-3">
-    <h1>Admin Panel</h1>
-    <nav>
-      <a href="<%= admin_root_path %>" class="btn btn-primary">Dashboard</a>
-    </nav>
-  </header>
+<body id="sb-nav-fixed">
 
-  <main class="mt-4">
-    <%= yield %>
-  </main>
+  <%= render 'layouts/shared/topbar' %>
+  <div id="layoutSidenav">
+    <%= render 'layouts/shared/sidebar' %>
+    <div id="layoutSidenav_content">
+      <%= yield %>
+      <%= render 'layouts/shared/footer' %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <%= javascript_include_tag "admin/scripts.js" %>
+  <%= javascript_include_tag "admin/demo/chart-area-demo.js" %>
+  <%= javascript_include_tag "admin/demo/chart-bar-demo.js" %>
+  <%= javascript_include_tag "admin/datatables-simple-demo.js" %>
 </body>
 </html>
