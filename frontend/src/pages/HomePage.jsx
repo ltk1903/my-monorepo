@@ -1,11 +1,22 @@
+import Service from "./Service";
+import Portfolio from "./Portfolio";
+import About from "./About";
+import Team from "./Team";
+import Clients from "./Clients";
+import Contact from "./Contact";
+
 const HomePage = () => {
     return (
       <div>
-        <h2>Welcome to Parking System</h2>
-        <p>Find and manage your parking spots easily.</p>
+        <Service />
+        <Portfolio />
+        <About />
+        <Team />
+        <Clients />
+        <Contact />
       </div>
     );
   };
   
-  export default HomePage;
+export default HomePage;
   
