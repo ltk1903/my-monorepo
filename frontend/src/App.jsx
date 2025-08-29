@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { useEffect } from "react";
+import Nvabar from "./layouts/Nvabar";
+import Masthead from "./layouts/Masthead";
+import Home from "./layouts/Home";
+import Footer from "./layouts/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    // Import script của template
+    import("./assets/js/scripts");
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <body id="page-top">
+      <Nvabar />
+      <Masthead />
+      <Home />
+      <Footer />
+    </body>
   )
 }
 
-export default App
+export default App;
